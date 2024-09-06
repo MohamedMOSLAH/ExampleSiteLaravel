@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Services\MovieDBService;
 
 class MovieController extends Controller
@@ -15,13 +16,13 @@ class MovieController extends Controller
 
     public function index()
     {
-        $movies = $this->movieService->getTrendingMovies('day');
-        return view('movies.index', ['movies' => $movies['results']]);
+        $movies = Movie::all();
+        return view('movies.index', ['movies' => $movies]);
     }
     
     public function show($id)
     {
-        $movie = $this->movieService->getMovieDetails($id);
+        $movie = Movie::find($id);
         
         if (!$movie) {
             abort(404);

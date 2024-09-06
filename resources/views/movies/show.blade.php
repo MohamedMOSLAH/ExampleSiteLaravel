@@ -7,5 +7,6 @@
     <p><strong>Date de sortie : </strong>{{ $movie['release_date'] }}</p>
     <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}">
     <p><strong>Note : </strong>{{ $movie['vote_average'] }} / 10</p>
+    {{ json_encode($movie) }}
 </div>
 @endsection
