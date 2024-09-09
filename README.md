@@ -40,6 +40,7 @@ composer install
 ## 6. Compilater les assets
 
 npm install
+
 npm run dev
 
 ## 7. Tester
