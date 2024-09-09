@@ -37,7 +37,7 @@ composer install
 
 ./vendor/bin/sail artisan movies:import-trending
 
-## 6. Compilater les assets
+## 6. Compiler les assets
 
 npm install
 
