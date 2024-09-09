@@ -18,6 +18,7 @@
 ### 1. Cloner le projet
 
 git clone https://github.com/MohamedMOSLAH/ExampleSiteLaravel.git
+
 cd ExampleSiteLaravel
 
 ## 2. Installer les dépendances
@@ -46,12 +47,12 @@ http://localhost
 
 ## Utilisation de Site
 
-## 1. / pour la liste des films
+1.  / pour la liste des films
 
-## 2. /movie/{id} pour la fiche d'un film
+2.  /movie/{id} pour la fiche d'un film
 
-## 3. /register pour créer une compte
+3.  /register pour créer une compte
 
-## 4. /login pour s'authentifier
+4.  /login pour s'authentifier
 
-## 5. /movies-crud pour utiliser tous les fonctionnalités CRUD (il faut être connecté)
+5.  /movies-crud pour utiliser tous les fonctionnalités CRUD (il faut être connecté)
