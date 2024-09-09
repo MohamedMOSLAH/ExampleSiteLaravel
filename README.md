@@ -13,7 +13,7 @@
 
 ## Installation
 
-### Pour l'installation vous pouvez exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
+Pour l'installation vous pouvez exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
 
 ### 1. Cloner le projet
 
@@ -23,7 +23,7 @@ cd ExampleSiteLaravel
 
 ## 2. Installer les dépendances
 
-./vendor/bin/sail composer install
+composer install
 
 ## 3. Générer la clé de l'application
 
