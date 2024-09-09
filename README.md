@@ -25,21 +25,22 @@ cd ExampleSiteLaravel
 
 composer install
 
-## 3. Générer la clé de l'application
-
-./vendor/bin/sail artisan key:generate
-
-## 4. Migrer la base de données
+## 3. Migrer la base de données
 
 ./vendor/bin/sail artisan migrate
 
-## 5. Démarrer l'environnement Docker
+## 4. Démarrer l'environnement Docker
 
 ./vendor/bin/sail up -d
 
-## 6. Importer les films tendances
+## 5. Importer les films tendances
 
 ./vendor/bin/sail artisan movies:import-trending
+
+## 6. Compilater les assets
+
+npm install
+npm run dev
 
 ## 7. Tester
 
