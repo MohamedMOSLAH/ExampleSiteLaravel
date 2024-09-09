@@ -10,7 +10,7 @@ class MovieCrud extends Component
 {
     use WithPagination;
 
-    public $title, $description, $movie_id;
+    public $title, $overview, $movie_id, $vote_average, $poster_path, $release_date;
     public $isOpen = false;
 
     
@@ -21,9 +21,11 @@ class MovieCrud extends Component
         ]);
     }
 
-    public function openModal()
+    public function openModal($id="")
     {
-        $this->resetInputFields();
+        if($id === ""){
+            $this->resetInputFields();
+        }
         $this->isOpen = true;
     }
 
@@ -35,20 +37,26 @@ class MovieCrud extends Component
     private function resetInputFields()
     {
         $this->title = '';
-        $this->description = '';
+        $this->overview = '';
         $this->movie_id = '';
+
     }
 
     public function store()
     {
         $this->validate([
             'title' => 'required',
-            'description' => 'required',
+            'overview' => 'required',
+            'vote_average' => 'required',
+     
         ]);
 
         Movie::updateOrCreate(['id' => $this->movie_id], [
             'title' => $this->title,
-            'description' => $this->description,
+            'overview' => $this->overview,
+            'vote_average' => $this->vote_average,
+            'poster_path' => $this->poster_path,
+            'release_date' => $this->release_date
         ]);
 
         session()->flash('message',
@@ -63,9 +71,12 @@ class MovieCrud extends Component
         $movie = Movie::findOrFail($id);
         $this->movie_id = $id;
         $this->title = $movie->title;
-        $this->description = $movie->description;
+        $this->overview = $movie->overview;
+        $this->vote_average = $movie->vote_average;
+        $this->poster_path = $movie->poster_path;
+        $this->release_date = $movie->release_date;
 
-        $this->openModal();
+        $this->openModal($id);
     }
 
     public function delete($id)
