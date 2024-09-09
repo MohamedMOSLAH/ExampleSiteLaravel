@@ -5,9 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::middleware([
     'auth:sanctum',
@@ -18,7 +16,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Route::get('/movies', [MovieController::class, 'index'])->name('movies.index')->withoutMiddleware([/* middlewares jetstream, si applicable */]);
-Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
+Route::get('/', [MovieController::class, 'index'])->name('movies.index')->withoutMiddleware([/* middlewares jetstream, si applicable */]);
+Route::get('/movie/{id}', [MovieController::class, 'show'])->name('movies.show');
+
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/movies-crud', MovieCrud::class)->name('movies.crud');
+});
