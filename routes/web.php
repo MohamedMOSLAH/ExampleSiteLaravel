@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\MovieCrud;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 
@@ -18,4 +19,6 @@ Route::middleware([
     })->name('dashboard');
 });
 Route::get('/movies', [MovieController::class, 'index'])->name('movies.index')->withoutMiddleware([/* middlewares jetstream, si applicable */]);
-    Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
+
+Route::get('/movies-crud', MovieCrud::class)->name('movies.crud');
