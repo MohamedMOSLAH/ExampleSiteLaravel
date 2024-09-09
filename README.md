@@ -13,7 +13,7 @@
 
 ## Installation
 
-Pour l'installation vous pouvez exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
+Pour l'installation vous pouvez cloner le projet exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
 
 ### 1. Cloner le projet
 
