@@ -1,13 +1,22 @@
 #!/bin/bash
 
-echo "Installation des dépendances avec Composer..."
-composer install
+echo "Démarrage de Docker et construction des conteneurs avec Sail..."
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd)":/var/www/html \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install
+
+
+echo "Démarrage de Docker..."
+./vendor/bin/sail up -d
+
 
 echo "Exécution de migration..."
 ./vendor/bin/sail artisan migrate
 
-echo "Démarrage de Docker..."
-./vendor/bin/sail up -d
+
 
 echo "Importation des films tendances..."
 ./vendor/bin/sail artisan movies:import-trending
@@ -15,5 +24,3 @@ echo "Importation des films tendances..."
 echo "Compilation des assets..."
 npm install
 npm run dev 
-
-echo "Installation terminée. Le site est disponible sur http://localhost"

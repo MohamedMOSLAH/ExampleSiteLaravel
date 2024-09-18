@@ -21,9 +21,9 @@ git clone https://github.com/MohamedMOSLAH/ExampleSiteLaravel.git
 
 cd ExampleSiteLaravel
 
-## 2. Installer les dépendances
+## 2. Démarrage de Docker et construction des conteneurs avec Sail.
 
-composer install
+docker run --rm \ -u "$(id -u):$(id -g)" \ -v "$(pwd)":/var/www/html \ -w /var/www/html \ laravelsail/php82-composer:latest \ composer install
 
 ## 3. Migrer la base de données
 
