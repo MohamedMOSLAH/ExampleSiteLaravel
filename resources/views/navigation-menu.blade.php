@@ -104,9 +104,9 @@
                         </x-slot>
 
                         <x-slot name="content">
+                            @if (Auth::check())
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
                             </div>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
@@ -130,6 +130,14 @@
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
                             </form>
+                            @else
+                            <x-dropdown-link href="{{ route('login') }}">
+                                {{ __('login') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{ route('register') }}">
+                                {{ __('register') }}
+                            </x-dropdown-link>
+                            @endif
                         </x-slot>
                     </x-dropdown>
                 </div>
