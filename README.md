@@ -13,7 +13,7 @@
 
 ## Installation
 
-Pour l'installation vous pouvez cloner le projet exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
+Pour l'installation vous pouvez cloner le projet et exécuter le fichier ./install.sh ou bien suivre les 7 étapes ci-dessous:
 
 ### 1. Cloner le projet
 
@@ -49,12 +49,16 @@ http://localhost
 
 ## Utilisation de Site
 
-1.  / pour la liste des films
+1.  / pour visiter liste des films (page d'accueil)
 
-2.  /movie/{id} pour la fiche d'un film
+2.  /movie/{id} pour visiter la page fiche d'un film
 
 3.  /register pour créer une compte
 
 4.  /login pour s'authentifier
 
-5.  /movies-crud pour utiliser tous les fonctionnalités CRUD (il faut être connecté)
+5.  /movies-crud pour utiliser tous les fonctionnalités (il faut être connecté (créer une compte et aprés connecter)):
+    - création d'un film
+    - modification d'un film
+    - supprission d'un film
+    - voir tous la liste de film avec la pagination
