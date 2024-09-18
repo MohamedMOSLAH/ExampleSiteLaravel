@@ -49,16 +49,16 @@ http://localhost
 
 ## Utilisation de Site
 
-1.  / pour visiter liste des films (page d'accueil)
+1. / pour visiter la liste des films (page d'accueil)
 
-2.  /movie/{id} pour visiter la page fiche d'un film
+2. /movie/{id} pour visiter la fiche d'un film
 
-3.  /register pour créer une compte
+3. /register pour créer un compte
 
-4.  /login pour s'authentifier
+4. /login pour s'authentifier
 
-5.  /movies-crud pour utiliser tous les fonctionnalités (il faut être connecté (créer une compte et aprés connecter)):
+5. /movies-crud pour utiliser toutes les fonctionnalités CRUD (il faut être connecté : créer un compte et se connecter ensuite) :
     - création d'un film
     - modification d'un film
-    - supprission d'un film
-    - voir tous la liste de film avec la pagination
+    - suppression d'un film
+    - voir toute la liste des films avec pagination
